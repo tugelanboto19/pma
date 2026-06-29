@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 const personalInfo = {
   name: "Imam Falahi",
   email: "mobho@ymail.com",
@@ -29,7 +31,11 @@ export default function Footer() {
       padding: '2rem 0 1rem',
       background: '#06060a'
     }}>
-      <div className="container-custom">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
+        className="container-custom"
+      >
         {/* Main Footer Row */}
         <div style={{
           display: 'flex',
@@ -105,27 +111,57 @@ export default function Footer() {
 
           {/* Social Mini */}
           <div style={{ display: 'flex', gap: 16 }}>
-            <a href={personalInfo.github} target="_blank" rel="noopener noreferrer"
-              style={{ color: '#4b5563', fontSize: 11, textDecoration: 'none', transition: 'color 0.3s' }}
-              onMouseEnter={e => e.target.style.color = '#a78bfa'}
+            <motion.a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              style={{
+                color: '#4b5563',
+                fontSize: 11,
+                textDecoration: 'none',
+                transition: 'color 0.3s'
+              }}
+              onMouseEnter={e => e.target.style.color = '#bf00ff'}
               onMouseLeave={e => e.target.style.color = '#4b5563'}
             >
               GitHub
-            </a>
-            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer"
-              style={{ color: '#4b5563', fontSize: 11, textDecoration: 'none', transition: 'color 0.3s' }}
-              onMouseEnter={e => e.target.style.color = '#00f0ff'}
+            </motion.a>
+            <motion.a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              style={{
+                color: '#4b5563',
+                fontSize: 11,
+                textDecoration: 'none',
+                transition: 'color 0.3s'
+              }}
+              onMouseEnter={e => e.target.style.color = '#00ffff'}
               onMouseLeave={e => e.target.style.color = '#4b5563'}
             >
               LinkedIn
-            </a>
-            <a href={personalInfo.portfolio} target="_blank" rel="noopener noreferrer"
-              style={{ color: '#4b5563', fontSize: 11, textDecoration: 'none', transition: 'color 0.3s' }}
-              onMouseEnter={e => e.target.style.color = '#00ff88'}
+            </motion.a>
+            <motion.a
+              href={personalInfo.portfolio}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              style={{
+                color: '#4b5563',
+                fontSize: 11,
+                textDecoration: 'none',
+                transition: 'color 0.3s'
+              }}
+              onMouseEnter={e => e.target.style.color = '#ffff00'}
               onMouseLeave={e => e.target.style.color = '#4b5563'}
             >
               Portfolio
-            </a>
+            </motion.a>
           </div>
         </div>
 
@@ -136,13 +172,13 @@ export default function Footer() {
           textAlign: 'center'
         }}>
           <p className="font-jetbrains" style={{ fontSize: 9, color: '#374151' }}>
-            Built with <span style={{ color: '#00f0ff' }}>React</span> +{' '}
-            <span style={{ color: '#a78bfa' }}>TailwindCSS</span> +{' '}
-            <span style={{ color: '#00ff88' }}>Framer Motion</span>
+            Built with <span style={{ color: '#00ffff' }}>React</span> +{' '}
+            <span style={{ color: '#bf00ff' }}>TailwindCSS</span> +{' '}
+            <span style={{ color: '#ff00ff' }}>Framer Motion</span>
             {' — '}Deployed with ❤️
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Cyber line decoration */}
       <div style={{
@@ -151,7 +187,7 @@ export default function Footer() {
         left: '10%',
         right: '10%',
         height: 1,
-        background: 'linear-gradient(90deg, transparent, rgba(0,240,255,0.1), transparent)'
+        background: 'linear-gradient(90deg, transparent, rgba(0,240,255,0.1), rgba(0,255,255,0.1), rgba(255,0,255,0.1), transparent)'
       }} />
     </footer>
   )

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const navLinks = [
   { id: 'hero', label: 'Home' },
@@ -25,15 +26,19 @@ export default function Navbar() {
   }
 
   return (
-    <nav style={{
-      position: 'fixed',
-      top: 0, left: 0, right: 0,
-      zIndex: 50,
-      background: scrolled ? 'rgba(10, 10, 15, 0.9)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(20px)' : 'none',
-      borderBottom: scrolled ? '1px solid rgba(0, 240, 255, 0.1)' : 'none',
-      transition: 'all 0.4s'
-    }}>
+    <motion.nav
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1, transition: { duration: 0.4 } }}
+      style={{
+        position: 'fixed',
+        top: 0, left: 0, right: 0,
+        zIndex: 50,
+        background: scrolled ? 'rgba(10, 10, 15, 0.9)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(20px)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(0, 240, 255, 0.1)' : 'none',
+        transition: 'all 0.4s'
+      }}
+    >
       <div className="container-custom">
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '64px' }}>
           
@@ -54,17 +59,19 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <div style={{ display: 'none', gap: '4px' }}>
             {navLinks.map(link => (
-              <button key={link.id} onClick={() => scrollTo(link.id)}
+              <motion.button
+                key={link.id}
+                onClick={() => scrollTo(link.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 style={{
                   padding: '8px 16px', fontSize: 14, fontWeight: 500,
                   color: '#9ca3af', background: 'transparent', border: 'none',
                   borderRadius: 8, cursor: 'pointer'
                 }}
-                onMouseEnter={e => e.target.style.color = '#00f0ff'}
-                onMouseLeave={e => e.target.style.color = '#9ca3af'}
               >
                 {link.label}
-              </button>
+              </motion.button>
             ))}
           </div>
 
@@ -78,9 +85,8 @@ export default function Navbar() {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               {mobileOpen
                 ? <path d="M6 18L18 6M6 6l12 12" />
-                : <><path d="M4 6h16M4 12h16M4 18h16" /></>
-              }
-            </svg>
+                : <><path d="M4 6h16M4 12h16M4 18h16" /></>}
+              </svg>
           </button>
         </div>
       </div>
@@ -90,22 +96,24 @@ export default function Navbar() {
         <div style={{ background: 'rgba(10,10,15,0.95)', backdropFilter: 'blur(20px)', borderTop: '1px solid rgba(0,240,255,0.1)' }}>
           <div className="container-custom" style={{ padding: '16px 0' }}>
             {navLinks.map(link => (
-              <button key={link.id} onClick={() => scrollTo(link.id)}
+              <motion.button
+                key={link.id}
+                onClick={() => scrollTo(link.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 style={{
                   display: 'block', width: '100%', textAlign: 'left',
                   padding: '12px 16px', color: '#9ca3af',
                   background: 'transparent', border: 'none',
                   borderRadius: 8, cursor: 'pointer', fontSize: 15
                 }}
-                onMouseEnter={e => e.target.style.background = 'rgba(255,255,255,0.05)'}
-                onMouseLeave={e => e.target.style.background = 'transparent'}
               >
                 {link.label}
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
       )}
-    </nav>
+    </motion.nav>
   )
 }

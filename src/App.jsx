@@ -9,7 +9,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="bg-dark" style={{ minHeight: '100vh', overflow: 'hidden' }}>
+    <div className="bg-dark" style={{ minHeight: '100%', overflow: 'hidden', position: 'relative' }}>
       {/* Cyber Grid Background */}
       <div className="bg-cyber-grid" style={{ position: 'fixed', inset: 0, opacity: 0.3, pointerEvents: 'none' }} />
       
