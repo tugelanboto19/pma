@@ -96,14 +96,14 @@ export default function Tools() {
             {/* Threat level indicator bar */}
             <div style={{ 
               height: '4px', 
-              background: 'linear-gradient(90deg, 
+              background: `linear-gradient(90deg, 
                 ${getThreatColor(threatLevel)} 0%, 
                 ${getThreatColor(threatLevel)} 
                 ${threatLevel === 'low' ? '33%' : threatLevel === 'medium' ? '66%' : '100%'}, 
                 #1a1a1a 
                 ${threatLevel === 'low' ? '33%' : threatLevel === 'medium' ? '66%' : '100%'} 
                 100%
-              )', 
+              )`, 
               marginTop: '0.5rem',
               borderRadius: '2px'
             }}></div>
@@ -159,7 +159,7 @@ export default function Tools() {
                 left: 0, 
                 width: '100%', 
                 height: '100%', 
-                background: 'linear-gradient(
+                background: `linear-gradient(
                   90deg, 
                   transparent 0%, 
                   transparent 20%, 
@@ -171,7 +171,7 @@ export default function Tools() {
                   #00f0ff 80%, 
                   transparent 80%, 
                   transparent 100%
-                )',
+                )`,
                 backgroundSize: '200% 100%',
                 backgroundPosition: '0 0',
                 animation: 'flow 2s linear infinite'
@@ -194,7 +194,7 @@ export default function Tools() {
               <div style={{ 
                 width: `${Math.min(Math.random() * 100, 95)}%`, 
                 height: '100%', 
-                background: 'linear-gradient(90deg, #ff00e5, #ff00ff)', 
+                background: `linear-gradient(90deg, #ff00e5, #ff00ff)`, 
                 borderRadius: '3px',
                 animation: 'pulse 2s ease-in-out infinite alternate'
               }}></div>
