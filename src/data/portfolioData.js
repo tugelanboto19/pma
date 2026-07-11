@@ -173,6 +173,15 @@ export const tools = [
   { name: "SIMBG", icon: "🏗️", category: "Legal System" },
   { name: "ESP32 IoT", icon: "🔧", category: "Hardware" },
   { name: "Linux Server", icon: "🐧", category: "Infrastructure" },
+  // Cybersecurity Tools
+  { name: "Wireshark", icon: "🐟", category: "Cybersecurity" },
+  { name: "Nmap", icon: "🗺️", category: "Cybersecurity" },
+  { name: "Metasploit", icon: "☠️", category: "Cybersecurity" },
+  { name: "Burp Suite", icon: "🕷️", category: "Cybersecurity" },
+  { name: "Kali Linux", icon: "🐉", category: "Cybersecurity" },
+  { name: "John the Ripper", icon: "🔓", category: "Cybersecurity" },
+  { name: "Aircrack-ng", icon: "📡", category: "Cybersecurity" },
+  { name: "Hashcat", icon: "#️⃣", category: "Cybersecurity" },
 ];
 
 export const projects = [
