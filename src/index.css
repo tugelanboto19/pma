@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Georgia", ui-serif, serif;
+
+  --color-brand-blue: #3b82f6;
+  --color-brand-dark: #0A0A0A;
+  --color-brand-deep: #020202;
+  --color-brand-accent: #ffffff;
+}
+
+@layer base {
+  html, body {
+    @apply bg-[#0A0A0A] text-slate-100 font-sans antialiased scroll-smooth;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar matching ultra-bold sleek theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+/* Custom layout helpers */
+.bold-outline-text {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.15);
+  color: transparent;
+}
+
+.bold-outline-text:hover {
+  -webkit-text-stroke: 1.5px rgba(59, 130, 246, 0.6);
+}
+
